@@ -3,5 +3,11 @@
 {% block main_content %}
     <div class="container">
         <h1>Hello There!</h1>
+        {% if form %}
+            <form method="POST" class="m-4"> {% csrf_token %}
+                {{ form.as_table }}
+                <button type="submit">Submit</button>
+            </form>
+        {% endif %}
     </div>
 {% endblock %}
