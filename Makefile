@@ -8,3 +8,10 @@ prod:
 	docker run --rm -d -p 80:80 --name django_container django_image gunicorn --bind 0.0.0.0:80 --workers 3 settings.wsgi:application
 stop:
 	docker stop django_container
+
+test:
+	pipenv run python manage.py test
+
+migrate:
+	pipenv run python manage.py makemigrations
+	pipenv run python manage.py migrate

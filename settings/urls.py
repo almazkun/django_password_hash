@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.shortcuts import render
 from hashhash.views import create_user, create_user_form
+from api.views import ModelSView, SerializerView
 
 
 urlpatterns = [
@@ -24,4 +25,6 @@ urlpatterns = [
     path("", lambda request: render(request, "home.html"), name="home"),
     path("create_user/", create_user, name="create_user"),
     path("create_user_form/", create_user_form, name="create_user_form"),
+    path("model_s", ModelSView.as_view(), name="model_s"),
+    path("serializer", SerializerView.as_view(), name="serializer"),
 ]

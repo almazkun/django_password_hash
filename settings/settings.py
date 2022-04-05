@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "hashhash",
+    "api",
 ]
 
 MIDDLEWARE = [
@@ -147,3 +149,8 @@ LOGGING = {
         "level": "DEBUG",
     },
 }
+
+# CUSTOM USER MODEL CONFIGS
+# ------------------------------------------------------------------------------
+# https://docs.djangoproject.com/en/dev/topics/auth/customizing/#substituting-a-custom-user-model
+AUTH_USER_MODEL = "hashhash.CustomUser"
